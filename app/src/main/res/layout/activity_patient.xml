@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/patient_bg"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="210dp">
+
+
+        <ImageView
+            android:id="@+id/bookButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/appointmentBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appointmentBtn"
+            app:srcCompat="@drawable/book" />
+
+        <ImageView
+            android:id="@+id/appointmentBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bookButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/appointment" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_margin="30dp">-->
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/welcomeText"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:text="Welcome ____, you are logged in as patient."/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/bookButton"-->
+<!--                android:layout_width="200dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Book/Check In" />-->
+
+
+<!--            <Button-->
+<!--                android:id="@+id/appointmentBtn"-->
+<!--                android:layout_width="200dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="View Appointments"-->
+<!--                android:layout_marginBottom="30dp"/>-->
+
+
+<!--    </LinearLayout>-->
+
+</RelativeLayout>

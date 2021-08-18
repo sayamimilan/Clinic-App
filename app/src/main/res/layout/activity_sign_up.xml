@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".SignUp"
+    android:background="@drawable/login">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+<!--        <RadioGroup-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:background="@drawable/rectangle_2"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:checkedButton="@id/loginRB"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/loginRB"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/rectangle_3"-->
+<!--                android:layout_weight="1"-->
+<!--                android:button="@null"-->
+<!--                android:text="Login"-->
+<!--                android:gravity="center"/>-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/signupRB"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/rectangle_3"-->
+<!--                android:layout_weight="1"-->
+<!--                android:button="@null"-->
+<!--                android:text="SignUp"-->
+<!--                android:gravity="center"/>-->
+
+<!--        </RadioGroup>-->
+
+        <ImageView
+            android:id="@+id/SlideImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rectangle_2" />
+
+        <ImageView
+            android:id="@+id/SignUpSlide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="123dp"
+            app:layout_constraintBottom_toBottomOf="@+id/SlideImg"
+            app:layout_constraintEnd_toEndOf="@+id/SlideImg"
+            app:layout_constraintStart_toStartOf="@+id/SlideImg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/rectangle_3" />
+
+        <ImageView
+            android:id="@+id/SignUpSlideText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/SlideImg"
+            app:layout_constraintEnd_toEndOf="@+id/SlideImg"
+            app:layout_constraintStart_toStartOf="@+id/SignUpSlide"
+            app:layout_constraintTop_toTopOf="@+id/SignUpSlide"
+            app:srcCompat="@drawable/signuptextwhite" />
+
+        <ImageView
+            android:id="@+id/LoginSlideText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/SlideImg"
+            app:layout_constraintEnd_toStartOf="@+id/SignUpSlide"
+            app:layout_constraintHorizontal_bias="0.534"
+            app:layout_constraintStart_toStartOf="@+id/SlideImg"
+            app:layout_constraintTop_toTopOf="@+id/SlideImg"
+            app:layout_constraintVertical_bias="0.533"
+            app:srcCompat="@drawable/logintextteal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/custom_user_icon"
+            app:endIconMode="clear_text"
+            android:hint="Name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addressField2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                android:singleLine="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:startIconDrawable="@drawable/custom_user_icon"
+            app:endIconMode="clear_text"
+            android:hint="Username">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usernameField2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                android:singleLine="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:hint="Password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/ic_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordField2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        <EditText-->
+<!--                android:id="@+id/addressField2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:paddingStart="12dp"-->
+<!--            android:paddingEnd="12dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Name"-->
+<!--            android:drawableStart="@drawable/custom_user_icon"-->
+<!--            android:background="@drawable/custom_edit_text"-->
+<!--            android:drawablePadding="12dp"-->
+<!--            android:inputType="textPersonName"/>-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/usernameField2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:paddingStart="12dp"-->
+<!--                android:paddingEnd="12dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Username"-->
+<!--                android:drawableStart="@drawable/custom_user_icon"-->
+<!--                android:background="@drawable/custom_edit_text"-->
+<!--                android:drawablePadding="12dp"-->
+<!--                android:inputType="textPersonName" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/passwordField2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:paddingStart="12dp"-->
+<!--                android:paddingEnd="12dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Password"-->
+<!--                android:drawableStart="@drawable/custom_password_icon"-->
+<!--                android:background="@drawable/custom_edit_text"-->
+<!--                android:drawablePadding="12dp"-->
+<!--                android:inputType="textPassword"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvClickSignIn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="right"-->
+<!--                android:layout_gravity="right"-->
+<!--                android:padding="3dp"-->
+<!--                android:text="Already have an account?"/>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="Sign up as:"
+            android:textSize="20sp"
+            android:textColor="#000"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/PatientRB"
+                    android:layout_width="172dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checked="true"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:text="Patient"
+                    android:textSize="18sp"
+                    android:typeface="sans" />
+
+                <RadioButton
+                    android:id="@+id/EmployeeRB"
+                    android:layout_width="173dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:text="Employee"
+                    android:textSize="18sp" />
+            </RadioGroup>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/SignUpImgBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:background="@drawable/rectangle_4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/SignUpImgBtn"
+                app:layout_constraintEnd_toEndOf="@+id/SignUpImgBtn"
+                app:layout_constraintStart_toStartOf="@+id/SignUpImgBtn"
+                app:layout_constraintTop_toTopOf="@+id/SignUpImgBtn"
+                app:srcCompat="@drawable/signuptextwhite" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <Button-->
+<!--            android:id="@+id/createButton"-->
+<!--            android:layout_width="260dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/rectangle_4"-->
+<!--            android:text="Sign Up"-->
+<!--            app:cornerRadius="4dp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/backButton"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:text="Main Menu" />-->
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

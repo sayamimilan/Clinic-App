@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmployeeUser"
+    android:background="@drawable/employee">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="160dp">
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/profileButton"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            />-->
+
+        <ImageView
+            android:id="@+id/profileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile" />
+
+        <ImageView
+            android:id="@+id/servicesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profileButton"
+            app:layout_constraintTop_toTopOf="@+id/profileButton"
+            app:srcCompat="@drawable/services" />
+
+        <ImageView
+            android:id="@+id/hoursButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/servicesButton"
+            app:layout_constraintStart_toStartOf="@+id/profileButton"
+            app:layout_constraintTop_toBottomOf="@+id/servicesButton"
+            app:srcCompat="@drawable/hours" />
+
+<!--        <Button-->
+<!--            android:id="@+id/aptBtn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Clinic Appointments"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/hoursButton" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="0."-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/configProfile"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="42dp"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Welcome Employee"-->
+<!--                android:textColor="@android:color/black"-->
+<!--                android:textSize="26sp" />-->
+
+<!--        </LinearLayout>-->
+
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/welcomeText"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="72dp"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Welcome ____, you are logged in as an employee."-->
+<!--                android:textColor="@android:color/black"-->
+<!--                app:fontFamily="sans-serif-light" />-->
+
+
+<!--            <Button-->
+<!--                android:id="@+id/profileButton"-->
+<!--                android:layout_width="165dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="28dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Clinic Profile"-->
+<!--                android:layout_marginBottom="20dp"/>-->
+
+
+<!--            <Button-->
+<!--                android:id="@+id/hoursButton"-->
+<!--                android:layout_width="165dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Clinic Hours"-->
+<!--                android:layout_marginBottom="20dp"/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/servicesButton"-->
+<!--                android:layout_width="165dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="Clinic Services"-->
+<!--                android:layout_marginBottom="20dp"/>-->
+
+
+
+</RelativeLayout>
