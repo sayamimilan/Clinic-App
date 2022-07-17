@@ -75,7 +75,7 @@ public class Admin extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.logout:
-                Intent intent = new Intent(Admin.this, MainActivity.class);
+                Intent intent = new Intent(Admin.this, SignIn.class);
                 startActivity(intent);
                 break;
         }

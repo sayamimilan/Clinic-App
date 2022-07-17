@@ -152,7 +152,7 @@ public class EmployeeUser extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.logout:
-                Intent intent = new Intent(EmployeeUser.this, MainActivity.class);
+                Intent intent = new Intent(EmployeeUser.this, SignIn.class);
                 startActivity(intent);
                 break;
         }

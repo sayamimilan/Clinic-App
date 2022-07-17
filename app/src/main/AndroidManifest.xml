@@ -27,19 +27,16 @@
         <activity android:name=".SpecificClinic" />
         <activity android:name=".CheckIn" />
         <activity android:name=".Appointment" />
-        <activity android:name=".EmployeeHours" />
         <activity android:name=".AddServices" />
         <activity android:name=".Profile" />
         <activity android:name=".Services" />
         <activity android:name=".Hours" />
         <activity android:name=".ViewServices" />
-        <activity android:name=".ViewUsers" />
         <activity android:name=".EmployeeUser" />
         <activity android:name=".PatientUser" />
         <activity android:name=".Admin" />
         <activity android:name=".SignUp" />
-        <activity android:name=".SignIn" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SignIn" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

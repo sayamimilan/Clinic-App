@@ -79,10 +79,19 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
         });
     }
 
+    int counter = 0;
+
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+
+        counter++;
+        if(counter == 1){
+            Toast.makeText(this, "Press Back again to exit the app", Toast.LENGTH_SHORT).show();
+        }else{
+            super.onBackPressed();
+            this.finishAffinity();
+        }
+
     }
 
     public void updateUsers(){
