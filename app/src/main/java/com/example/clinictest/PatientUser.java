@@ -88,7 +88,7 @@ public class PatientUser extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.logout:
-                Intent intent = new Intent(PatientUser.this, MainActivity.class);
+                Intent intent = new Intent(PatientUser.this, SignIn.class);
                 startActivity(intent);
                 break;
         }
