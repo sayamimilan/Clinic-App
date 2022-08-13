@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class Admin extends AppCompatActivity {
 
-//    private Button userButton, serviceButton;
     private ImageView userButton, serviceButton;
     private Administrator activeUser;
     private TextView welcome;
@@ -32,7 +31,6 @@ public class Admin extends AppCompatActivity {
         userButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                openActivity(ListUsers.class);
                 openUsers();
             }
         });
@@ -84,7 +82,6 @@ public class Admin extends AppCompatActivity {
 
     public void openUsers(){
         Intent intent = new Intent(Admin.this, ListUsers.class);
-//        Intent intent = new Intent(Admin.this, ViewUsers.class);
         startActivity(intent);
     }
 }

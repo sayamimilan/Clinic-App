@@ -119,7 +119,6 @@ public class WalkInClinic implements Serializable {
         _rating = Math.round(sum / _numOfRatings);
     }
 
-
     public String getId(){return _id;}
     public String getName(){return _name;}
     public String getAddress(){return _address;}

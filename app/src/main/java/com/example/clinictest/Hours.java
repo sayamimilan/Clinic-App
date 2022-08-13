@@ -1,8 +1,5 @@
 package com.example.clinictest;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,11 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,11 +29,9 @@ public class Hours extends AppCompatActivity {
     private Employee activeUser;
     private ArrayList<DataBaseService> services;
     private ArrayList<DataBaseUser> users;
-    private WalkInClinic activeClinic;
     private static DatabaseReference databaseWalkIn = FirebaseDatabase.getInstance().getReference("clinics");
     private TimePicker sundayOpening, sundayClosing, mondayOpening, mondayClosing, tuesdayOpening, tuesdayClosing, wednesdayOpening, wednesdayClosing, thursdayOpening, thursdayClosing, fridayOpening, fridayClosing, saturdayOpening, saturdayClosing;
     private ToggleButton sundayOpen, mondayOpen, tuesdayOpen, wednesdayOpen, thursdayOpen, fridayOpen, saturdayOpen;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +45,6 @@ public class Hours extends AppCompatActivity {
         activeUser = (Employee) i.getSerializableExtra("user");
         services = (ArrayList<DataBaseService>) i.getSerializableExtra("services");
         users = (ArrayList<DataBaseUser>) i.getSerializableExtra("users");
-        activeClinic = activeUser.getWalkInClinic();
 
         databaseWalkIn.addValueEventListener(new ValueEventListener() {
             @Override
@@ -57,7 +52,6 @@ public class Hours extends AppCompatActivity {
                 for(DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     WalkInClinic clinic = postSnapshot.getValue(WalkInClinic.class);
                     if(clinic.getId().equals(activeUser.getClinicId())){
-                        activeClinic = clinic;
                         activeUser.setWalkInClinic(clinic);
                     }
                 }
@@ -211,14 +205,6 @@ public class Hours extends AppCompatActivity {
             }
         });
 
-
-//        backButton = (Button) findViewById(R.id.backButton1);
-//        backButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openUser();
-//            }
-//        });
     }
 
     public boolean valid_times(String[] open, String[] close, ArrayList<Integer> closed){

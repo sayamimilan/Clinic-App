@@ -37,8 +37,6 @@ public class myadapter extends FirebaseRecyclerAdapter<DataBaseUser,myadapter.my
     @Override
     protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final DataBaseUser model) {
 
-//        Administrator activeuser;
-
         if (model.getStatus().equals("disabled")) {
             holder.Name.setText(model.getName());
             holder.UserName.setText(model.getUsername());
@@ -60,7 +58,6 @@ public class myadapter extends FirebaseRecyclerAdapter<DataBaseUser,myadapter.my
 
         holder.edit.setOnClickListener(new View.OnClickListener() {
 
-//            WalkInClinic clinic = new WalkInClinic();
             @Override
             public void onClick(View view) {
                 HashMap hashMap = new HashMap();
@@ -129,11 +126,6 @@ public class myadapter extends FirebaseRecyclerAdapter<DataBaseUser,myadapter.my
                         if(id != null){
                             deleteUser(id);
                         }
-
-//                        if (!FirebaseDatabase.getInstance().getReference("users").child(model.getRole()).equals("Admin")) {
-//                            FirebaseDatabase.getInstance().getReference("users")
-//                                    .child(model.getId()).removeValue();
-//                        }
                     }
                 });
 

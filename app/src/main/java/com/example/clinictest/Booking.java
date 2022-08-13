@@ -3,7 +3,6 @@ package com.example.clinictest;
 import java.io.Serializable;
 import java.util.Date;
 
-
 public class Booking implements Serializable {
     private Integer _rating;
     private String _walkInId, _patientId, _serviceId;

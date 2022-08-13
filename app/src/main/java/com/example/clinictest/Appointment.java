@@ -1,8 +1,5 @@
 package com.example.clinictest;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +12,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,7 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -61,15 +60,6 @@ public class Appointment extends AppCompatActivity {
         pastBookings = new ArrayList<>();
         clinics = new ArrayList<>();
         bookings = new ArrayList<>();
-
-//        Button backBtn = findViewById(R.id.backBtn);
-//        backBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openActivity(PatientUser.class);
-//            }
-//        });
-
 
         databaseClinics.addValueEventListener(new ValueEventListener() {
             @Override
@@ -276,9 +266,6 @@ public class Appointment extends AppCompatActivity {
         intent.putExtra("users", users);
         intent.putExtra("bookings", bookings);
         intent.putExtra("clinics", clinics);
-
-
         startActivity(intent);
     }
-
 }

@@ -20,7 +20,6 @@ import java.util.Arrays;
 public class Profile extends AppCompatActivity {
 
     private Button saveButton, pickButton;
-//    private EditText nameField, phoneField, addressField;
     private TextInputEditText nameField, phoneField, addressField;
     private CheckBox cash, debit, credit;
     private Employee activeUser;
@@ -95,7 +94,6 @@ public class Profile extends AppCompatActivity {
 
     public void updateClinic(){
         ArrayList<PaymentMethod> paymentMethods = new ArrayList<>();
-//        ArrayList<InsuranceType> insuranceTypes = new ArrayList<>();
 
         if(!addressField.getText().toString().equals("") && !nameField.getText().toString().equals("") && !phoneField.getText().toString().equals("")){
             if(cash.isChecked()){
@@ -112,22 +110,10 @@ public class Profile extends AppCompatActivity {
                 return;
             }
 
-
-//            if(!validPhone(phoneField.getText().toString())){
-//                Toast.makeText(getApplicationContext(),"Invalid Phone Number", Toast.LENGTH_LONG).show();
-//                return;
-//            }
-
-//            if (!validateAddress(addressField.getText().toString())){
-//                Toast.makeText(getApplicationContext(),"Invalid Address", Toast.LENGTH_LONG).show();
-//                return;
-//            }
-
             clinic.setAddress(addressField.getText().toString());
             clinic.setName(nameField.getText().toString());
             clinic.setPhoneNumber(phoneField.getText().toString());
             clinic.setPaymentMethods(paymentMethods);
-//            clinic.setInsuranceTypes(insuranceTypes);
             try {
                 activeUser.updateWalkinClinic();  // if clinic is already in database
             }catch(IllegalArgumentException ex){ // if clinic isn't yet in database
@@ -159,46 +145,6 @@ public class Profile extends AppCompatActivity {
         // Attempt to start an activity that can handle the Intent
         startActivity(mapIntent);
     }
-
-
-//    public boolean validPhone(String phone){
-//        if(phone.length() < 10){
-//            return false;
-//        }
-//
-//        String digits = "";
-//        ArrayList<Character> valid = new ArrayList<>(Arrays.asList('1','2','3','4','5','6','7','8','9','0'));
-//
-//        Character last = '_';
-//        int count = 0;
-//        for(Character c:phone.toCharArray()){
-//            if(!valid.contains(c)){
-//                boolean one = c.equals('(') && (count==0 || count ==2);
-//                boolean two = c.equals(')') && (count==4 || count == 6);
-//                boolean three = c.equals('+') && count==0;
-//                boolean four = c.equals('-') && digits.length()%3 == 0;
-//
-//                if(!(one || two || three || four)){
-//                    return false;
-//                }
-//
-//            }else{
-//                if(Character.isDigit(c)){
-//                    if(!last.equals('+')){
-//                        digits = digits + c.toString();
-//                    }
-//                }
-//            }
-//            last = c;
-//            count++;
-//        }
-//        if(digits.length() == 10){
-//            return true;
-//        }
-//
-//        return false;
-//    }
-
 
     public String makeValidPhone(String phone){
         return phone;

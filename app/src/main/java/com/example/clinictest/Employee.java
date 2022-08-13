@@ -20,13 +20,11 @@ public class Employee extends User{
         init();
     }
 
-
     public Employee(String name, String username, String password, String clinicId){
         super(name, username, password);
         this.clinicId = clinicId;
         init();
     }
-
 
     public Employee(String username, String password){
         super(username, password);
@@ -39,7 +37,6 @@ public class Employee extends User{
             databaseUsers = FirebaseDatabase.getInstance().getReference("users");
         }catch(Exception e){}
         super.addRole("Employee");
-//        this.clinicId = clinicId;
         walkInClinic = null;
         openHours = new ArrayList<>();
         closeHours = new ArrayList<>();
@@ -68,7 +65,6 @@ public class Employee extends User{
             throw new IllegalArgumentException("Clinic doesn't exist");
         }
     }
-
 
     public String getClinicId(){return clinicId;}
 
@@ -133,6 +129,5 @@ public class Employee extends User{
         return walkInClinic.getOpeningTimes();
     }
 
-    public ArrayList<Integer> getClosedDays(){return walkInClinic.getClosedDays();}
-
+    public ArrayList<Integer> getClosedDays(){ return walkInClinic.getClosedDays(); }
 }

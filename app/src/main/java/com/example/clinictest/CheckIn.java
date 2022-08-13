@@ -14,7 +14,6 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -34,7 +33,6 @@ public class CheckIn extends AppCompatActivity {
     private Patient activeUser;
     private HashMap<String,String> serviceNameAndId;
 
-//    private EditText name, address;
     private TextInputEditText name, address, service;
     private Button search;
     private CheckBox sundayCB, mondayCB, tuesdayCB, wednesdayCB, thursdayCB, fridayCB, saturdayCB;
@@ -64,12 +62,8 @@ public class CheckIn extends AppCompatActivity {
                 for (DataSnapshot ds : snapshot.getChildren()) {
                     String ids = ds.getKey();
                     String serviceName = ds.child("name").getValue(String.class);
-//                    sids.add(ids);
-//                    snames.add(sname);
                     assert serviceName != null;
                     serviceNameAndId.put(serviceName.toLowerCase(), ids);
-//                    System.out.println(ids);
-//                    System.out.println(serviceName);
                 }
             }
 
@@ -88,7 +82,6 @@ public class CheckIn extends AppCompatActivity {
         }
         shownClinics = new ArrayList<>();
 
-        // refrence all checkbuttons
         sundayCB = findViewById(R.id.sundayCB);
         mondayCB = findViewById(R.id.mondayCB);
         tuesdayCB = findViewById(R.id.tuesdayCB);
@@ -99,12 +92,10 @@ public class CheckIn extends AppCompatActivity {
 
         updateCheckButtons();
 
-        // reference edit text
         name = findViewById(R.id.nameField2);
         address = findViewById(R.id.addressField);
         service = findViewById(R.id.serviceField);
 
-        // button links
         search = findViewById(R.id.searchBtn);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -184,26 +175,8 @@ public class CheckIn extends AppCompatActivity {
                 show = false;
             }
 
-//            for (String sid : clinic.getServiceIds()) {
-//                show = true;
-//                for (DataBaseService s : services) {
-//                    show = true;
-//                    if (s.getId().equals(sid)) {
-//                        if (!s.getName().toLowerCase().contains(service.getText().toString().toLowerCase().trim())) {
-//                            System.out.println("Clinic Name: " + clinic.getName());
-//                            System.out.println("Service name: " + s.getName());
-//                            show = false;
-//                        }
-//                    }
-//                }
-//            }
-
             String toCheck = service.getText().toString().toLowerCase().trim();
             String checkKey = serviceNameAndId.get(toCheck);
-//hashmap(name :key,id :value)
-
-//            System.out.println(checkKey);
-//            System.out.println(clinic.getServiceIds());
             if(!service.getText().toString().isEmpty() && !clinic.getServiceIds().contains(checkKey)) { //returns value using key
                 show = false;
             }
@@ -229,7 +202,6 @@ public class CheckIn extends AppCompatActivity {
         }catch (Exception e){
 
         }
-
     }
 
     public void openActivity(Class activity){

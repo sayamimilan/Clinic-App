@@ -17,10 +17,6 @@ import java.util.ArrayList;
 
 public class PatientUser extends AppCompatActivity {
     private Patient activeUser;
-//    private TextView welcome;
-
-//    private Button book;
-//    private Button appointment;
 
     private ImageView book, appointment;
 
@@ -56,10 +52,7 @@ public class PatientUser extends AppCompatActivity {
             }
         });
 
-//        welcome = (TextView) findViewById(R.id.welcomeText);
-
         activeUser = (Patient) i.getSerializableExtra("user");
-//        welcome.setText("Welcome " + activeUser.get_username() + " you are logged in as patient.");
     }
 
     @Override

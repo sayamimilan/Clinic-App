@@ -36,7 +36,6 @@ public class ListUsers extends AppCompatActivity {
 
         adapter = new myadapter(options);
         recyclerView.setAdapter(adapter);
-
     }
 
     @Override
@@ -50,5 +49,4 @@ public class ListUsers extends AppCompatActivity {
         super.onStop();
         adapter.stopListening();
     }
-
 }

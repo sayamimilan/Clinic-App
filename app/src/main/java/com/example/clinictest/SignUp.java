@@ -10,7 +10,6 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -32,7 +31,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     private static DatabaseReference databaseServices = FirebaseDatabase.getInstance().getReference("services");
     private ArrayList<DataBaseUser> users;
     private ArrayList<DataBaseService> services;
-//    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +41,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         getSupportActionBar().hide();
 
         ImageButton button1 = findViewById(R.id.SignUpImgBtn);
-//        Button button2 = findViewById(R.id.backButton);
 
         button1.setOnClickListener(this);
-//        button2.setOnClickListener(this);
         usernamesUsed = new HashSet<>();
         users = new ArrayList<>();
         services = new ArrayList<>();
@@ -60,14 +56,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 openSIgnIn();
             }
         });
-
-//        textView = (TextView) findViewById(R.id.tvClickSignIn);
-//        textView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openSIgnIn();
-//            }
-//        });
     }
 
     @Override
@@ -134,9 +122,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     }
                 }
                 break;
-//            case R.id.backButton:
-//                openMain();
-//                break;
         }
     }
 
@@ -216,7 +201,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         clinic.setPhoneNumber("");
 
         Employee newEmployee = new Employee(Name, userName, Password);
-//        System.out.println(usernamesUsed.contains(userName));
         if(!usernamesUsed.contains(userName)){
             if (newEmployee.save()) {  // tries to save user in database
                 newEmployee.createWalkInClinic(clinic);
@@ -232,7 +216,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             } else{
                 Toast.makeText(getApplicationContext(), "Error creating an account!", Toast.LENGTH_SHORT).show();
             }
-        }else{ // If user account already exists
+        }else{
             Toast.makeText(getApplicationContext(), "Account already exists!", Toast.LENGTH_SHORT).show();
         }
 

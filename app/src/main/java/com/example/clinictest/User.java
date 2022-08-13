@@ -28,13 +28,6 @@ public class User extends Person {
         init();
     }
 
-//    public User(String name, String username, String userRole, String status) {
-//        this.name = name;
-//        this.username = username;
-//        this.userRole = userRole;
-//        this.status = status;
-//    }
-
     private void init(){
         try{
             databaseUsers = FirebaseDatabase.getInstance().getReference("users");
@@ -70,5 +63,4 @@ public class User extends Person {
     public boolean login() {
         return false;
     }
-
 }

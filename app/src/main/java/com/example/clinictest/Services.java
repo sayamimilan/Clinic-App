@@ -102,14 +102,6 @@ public class Services extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void openUser() {
-//        Intent intent = new Intent(this, EmployeeUser.class);
-//        intent.putExtra("user", activeUser);
-//        intent.putExtra("users", users);
-//        intent.putExtra("services", allServices);
-//        startActivity(intent);
-//    }
-
     public void openServices() {
         Intent intent = new Intent(this, AddServices.class);
         intent.putExtra("user", activeUser);
